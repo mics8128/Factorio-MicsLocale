@@ -1,0 +1,4 @@
+初版模組中文化包
+
+Dectorio 		0.5.9		(來源: MAB15.05 - https://hackmd.io/s/r1nEOew-Z)
+Flare Stack 	2.1.3       (來源: MAB15.05 - https://hackmd.io/s/r1nEOew-Z)

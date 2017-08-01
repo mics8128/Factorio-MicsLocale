@@ -1,0 +1,13 @@
+{
+  "name": "MicsLocale",
+  "version": "0.0.1",
+  "factorio_version": "0.15",
+  "title": "Mics Locale Files",
+  "author": "Mics",
+  "description": "Locale files",
+  "dependencies": [
+	"base >= 0.15.0", 
+	"? Flare Stack >=2.1.3", 
+	"? Dectorio >= 0.5.9",
+  ]
+}
