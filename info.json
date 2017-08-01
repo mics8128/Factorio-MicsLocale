@@ -9,5 +9,6 @@
 	"base >= 0.15.0", 
 	"? Flare Stack >=2.1.3", 
 	"? Dectorio >= 0.5.9",
+	"? EvoGUI >= 0.4.206",
   ]
 }
