@@ -42,11 +42,11 @@ def main():
     for config in configs:
       text_file_str = mod + " - " + config + ".cfg"
       if os.path.exists(text_file_str):
-        print("檔案已存在, 自動略過. (" + text_file_str + ")")
+        print("已有同模組同版本檔案, 自動略過. (" + text_file_str + ")")
         continue
       regex_old_file_name = re.compile("^" + re.escape(mod_name) + r"(_\d+\.\d+\.\d+)? - " + re.escape(config) + r"\.cfg")
-      if filter(regex_old_file_name.match, os.listdir(my_locale_path)):
-        print("已有舊版檔案, 自動略過. (" + text_file_str + ")")
+      if list(filter(regex_old_file_name.match, os.listdir(my_locale_path))):
+        print("已有同模組檔案, 可能須手動檢查是否有缺漏, 自動略過. (" + text_file_str + ")")
         continue
       init_string = configs[config].decode("utf8")
       final_string = init_string;
@@ -54,13 +54,13 @@ def main():
         m = regex_translate_strs.match(line)
         if(m):
           source = m.group(2).replace("\\n", "@@%%@@")
-          # translated = translate_client.translate(source, target_language=TARGET_LANG).get("translatedText")
-          translated = source
+          translated = translate_client.translate(source, target_language=TARGET_LANG).get("translatedText")
+          # translated = source
           final_string = final_string.replace(m.group(0), "# " + m.group(2) + "\n" + m.group(1) + "=" + translated)
       text_file = codecs.open(text_file_str, mode="w", encoding="utf8")
       text_file.write(final_string)
       text_file.close()
-      print("已翻譯檔案: " + text_file_str)
+      print("檔案翻譯完成: " + text_file_str)
       #print(final_string)
           
       
