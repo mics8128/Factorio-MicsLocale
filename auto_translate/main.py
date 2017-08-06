@@ -33,7 +33,7 @@ def main():
     
    #開始翻譯
   translate_client = translate.Client()
-  regex_translate_strs = re.compile(r"^([^#=]+)=(.*)$")
+  regex_translate_strs = re.compile(r"^([^#= ]+) *=(.*)$")
   regex_mod_name = re.compile(r"(^([\w\s\-])+)_\d+\.\d+\.\d+")
   # { mod : { config_name : config_content,.. }, ..}
   for mod in mod_locales_pair:
